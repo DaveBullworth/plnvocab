@@ -1,73 +1,307 @@
-# React + TypeScript + Vite
+# Polish Vocabulary Trainer 🇵🇱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small educational project built with **React + TypeScript**, hosted on **GitHub Pages**, designed to help learn the Polish language.
 
-Currently, two official plugins are available:
+The project is built with a focus on:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- a fast MVP
+- convenient data manipulation
+- future expansion (tester, statistics)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features (MVP)
 
-## Expanding the ESLint configuration
+### 1. Vocabulary and Phrases
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+There is a single data source — a table of entries.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Each entry contains:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Polish (pl)
+- Russian (ru)
+- `isWord: boolean` — word or phrase
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+In the UI, this is displayed as **two tables**:
+
+- Words
+- Phrases
+
+### 2. Table
+
+For each table:
+
+- column sorting
+- filtering
+- inline editing
+- deleting entries
+- adding a new entry (`+`)
+
+### 3. Editing and Saving Mode
+
+Editing follows a **“game save system”** approach:
+
+- all changes live in the application state
+- data is **not committed automatically**
+- the user explicitly clicks **Save changes**
+
+Before saving:
+
+- data is considered a _draft_
+- changes are persistently stored locally
+
+---
+
+## Data Persistence (important)
+
+To prevent data loss on:
+
+- page reload
+- temporary network loss
+- tab or browser close
+
+a hybrid approach is used.
+
+### Draft storage
+
+- all unsaved changes are stored in `localStorage`
+- example key: `vocabulary:draft`
+
+Behavior:
+
+- on application start:
+  - if a draft exists → it is used
+  - otherwise → data is loaded from GitHub
+- on **Save changes**:
+  - data is committed to GitHub
+  - the draft is cleared
+
+As a result:
+
+- GitHub = source of truth
+- localStorage = temporary reliability buffer
+
+---
+
+## Tech Stack
+
+### Core
+
+- React 18
+- TypeScript
+- Vite
+
+### Tables and logic
+
+- **@tanstack/react-table** — all table logic
+
+> Headless table — full control over the UI
+
+### UI
+
+- **Mantine**
+  - layout
+  - inputs
+  - buttons
+  - modals
+  - typography
+
+> Mantine is **not used as a ready-made data table**,  
+> only as a UI layer.
+
+### Icons
+
+- lucide
+
+### Styles
+
+- **SCSS**
+- To support SCSS in Vite, you need to install the following package:
+
+```bash
+npm install -D sass
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Then you can create `.scss` files and import them into components:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```ts
+import "./styles/main.scss";
 ```
+
+### Data storage
+
+- GitHub repository (`data` branch)
+- JSON file: `data/vocabulary.json`
+
+### Deployment
+
+- GitHub Pages
+
+---
+
+## Git Architecture
+
+```txt
+main      → application source code
+gh-pages  → build output for GitHub Pages
+data      → data (vocabulary.json)
+```
+
+- the app **reads from and writes only to the `data` branch**
+- code and data are fully separated
+
+---
+
+## Data Model
+
+```ts
+export interface Entry = {
+  id: string;
+  pl: string;
+  ru: string;
+  isWord: boolean;
+};
+```
+
+```ts
+export interface VocabularyFile = {
+  version: number;
+  updatedAt: string;
+  entries: Entry[];
+};
+```
+
+---
+
+## Project Structure
+
+```txt
+src/
+├─ app/
+│   ├─ App.tsx
+│   ├─ providers/
+│   │   └─ StorageProvider.tsx
+│   └─ routes/               # future (tester)
+│
+├─ features/
+│   └─ vocabulary/
+│       ├─ components/
+│       │   ├─ VocabularyTable.tsx
+│       │   ├─ EditableCell.tsx
+│       │   ├─ SaveBar.tsx
+│       │   └─ PolishKeyboard.tsx (future)
+│       │
+│       ├─ hooks/
+│       │   └─ useVocabulary.ts
+│       │
+│       ├─ application/
+│       │   ├─ loadVocabulary.ts
+│       │   ├─ saveVocabulary.ts
+│       │   └─ types.ts
+│       │
+│       └─ domain/
+│           ├─ Entry.ts
+│           ├─ Vocabulary.ts
+│           └─ vocabularyRules.ts
+│
+├─ shared/
+│   ├─ ui/
+│   │   ├─ Table.tsx
+│   │   └─ ConfirmDialog.tsx
+│   │
+│   ├─ lib/
+│   │   └─ debounce.ts
+│   │
+│   └─ types/
+│       └─ Brand.ts
+│
+├─ infrastructure/
+│   └─ storage/
+│       ├─ VocabularyStorage.ts   # interface
+│       ├─ GitHubStorage.ts
+│       ├─ LocalDraftStorage.ts
+│       └─ index.ts
+│
+├─ styles/
+│   └─ theme.scss
+│
+├─ main.tsx
+└─ env.d.ts
+```
+
+### Upper-level scheme
+
+```txt
+UI (React)
+ ↓
+Application layer (use cases)
+ ↓
+Domain (models, rules)
+ ↓
+Infrastructure (storage, api)
+```
+
+### Data storage and flow diagram
+
+```pgsql
++-----------------------+
+|       UI Layer        |  <- React components (VocabularyTable, SaveBar)
+|-----------------------|
+|  - вызывает load/save |
+|  - gets/edits entries
++-----------+-----------+
+            |
+            | use-case functions
+            v
++-----------------------+
+| Application Layer     |  <- loadVocabulary / saveVocabulary
+|-----------------------|
+| - knows only storage  |
+| - wraps the methods  |
+| - adds logic:  |
+|   validation, draft   |
++-----------+-----------+
+            |
+            | It works via the interface VocabularyStorage
+            v
++-----------------------+
+| Infrastructure Layer  |
+|-----------------------|
+| 1) LocalDraftStorage  | <- synchronous, only draft
+|    - load()           |
+|    - save()           |
+|    - clear()          |
+|                       |
+| 2) GitHubStorage      | <- asynchronous, via GitHub JSON
+|    - load() : Promise |
+|    - save() : Promise |
++-----------------------+
+
+```
+
+---
+
+## Future Plans
+
+### Tester
+
+- mode selection: words / phrases
+- number of questions selection
+- random sampling
+- Polish translation input
+- answer validation
+
+### Polish Keyboard
+
+On-screen buttons:
+
+```
+ą ć ę ł ń ó ś ż ź
+```
+
+- inserts characters into the active input
+- used in both the tester and editing modes
+
+---
+
+> If an MVP can’t be built in a couple of evenings, the stack is chosen incorrectly.
