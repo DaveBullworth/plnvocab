@@ -68,7 +68,7 @@ export function useVocabulary(storage: VocabularyStorage) {
 
 	const updateEntry = useCallback((id: EntryId, patch: Partial<Entry>) => {
 		setVocabulary(prev => {
-			if (!prev) return prev;
+			if (!prev || isLoading) return prev;
 
 			return {
 				...prev,
@@ -85,7 +85,7 @@ export function useVocabulary(storage: VocabularyStorage) {
 
 	const addEntry = useCallback((entry: Entry) => {
 		setVocabulary(prev => {
-			if (!prev) return prev;
+			if (!prev || isLoading) return prev;
 
 			return {
 				...prev,
@@ -102,6 +102,7 @@ export function useVocabulary(storage: VocabularyStorage) {
 
 	const removeEntry = useCallback((id: EntryId) => {
 		setVocabulary(prev => {
+			if (!prev || isLoading) return prev;
 			if (!prev) return prev;
 
 			return {

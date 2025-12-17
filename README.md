@@ -181,6 +181,7 @@ src/
 │   ├─ App.tsx
 │   ├─ providers/
 │   │   └─ StorageProvider.tsx
+│   │   └─ StorageContext.ts
 │   └─ routes/               # future (tester)
 │
 ├─ features/
@@ -193,6 +194,7 @@ src/
 │       │
 │       ├─ hooks/
 │       │   └─ useVocabulary.ts
+|       |   └─ useStorage.ts
 │       │
 │       ├─ application/
 │       │   ├─ loadVocabulary.ts

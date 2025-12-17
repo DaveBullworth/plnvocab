@@ -1,35 +1,71 @@
 import type { ReactNode } from "react";
+// ↑ ReactNode — это TypeScript-тип
+//   означает "любой JSX, который можно отрендерить"
+//   (элементы, строки, массивы и т.п.)
+
 import { StorageContext } from "./StorageContext";
+// ↑ импортируем объект контекста,
+//   который мы создали в StorageContext.ts
+
 import { GitHubStorage } from "@/infrastructure/storage/GitHubStorage";
+// ↑ импортируем КЛАСС
+//   это обычный TS класс, не React
 
 /**
- * StorageProvider
+ * StorageProvider — это ФУНКЦИЯ-КОМПОНЕНТ React
  *
- * Это composition root.
- * Единственное место в приложении, где:
- *  - создаётся конкретная реализация VocabularyStorage
- *  - решается "какое хранилище мы используем"
+ * Она:
+ * - принимает props
+ * - возвращает JSX
  */
 export function StorageProvider({ children }: { children: ReactNode }) {
+	/*
+		children — это:
+		<StorageProvider>
+			<App />
+		</StorageProvider>
+
+		т.е. всё, что передали между тегами
+	*/
+
 	/**
-	 * Здесь мы СОЗДАЁМ конкретную реализацию.
+	 * storage — это ОБЫЧНАЯ ПЕРЕМЕННАЯ
 	 *
-	 * Всё, что ниже по дереву компонентов,
-	 * не знает и не должно знать:
-	 *  - что это GitHub
-	 *  - что там токены
-	 *  - что это REST / JSON
+	 * В неё мы кладём РЕЗУЛЬТАТ вызова конструктора класса
 	 */
 	const storage = new GitHubStorage(
+		// ↓ значения берутся из import.meta.env
+		//   это НЕ process.env
+		//   это объект, который Vite подставляет
+		//   во время сборки проекта
+
 		import.meta.env.VITE_GITHUB_REPO_URL,
 		import.meta.env.VITE_GITHUB_TOKEN
 	);
 
+	/*
+		import.meta.env:
+		- доступен только в Vite
+		- содержит переменные из .env файлов
+		- ТОЛЬКО те, что начинаются с VITE_
+	*/
+
 	/**
-	 * Мы "кладём" storage в Context
+	 * Возвращаем JSX
 	 *
-	 * Теперь любой компонент / хук ниже
-	 * может его получить, не создавая сам.
+	 * <StorageContext.Provider> — это компонент,
+	 * который находится внутри объекта StorageContext
 	 */
 	return <StorageContext.Provider value={storage}>{children}</StorageContext.Provider>;
+
+	/*
+		Что происходит тут буквально:
+
+		1) React видит Provider
+		2) React запоминает:
+		   "для всех компонентов внутри
+		    StorageContext = storage"
+		3) Любой useContext(StorageContext)
+		   ниже по дереву получит именно этот storage
+	*/
 }
