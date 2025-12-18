@@ -2,6 +2,8 @@
 
 A small educational project built with **React + TypeScript**, hosted on **GitHub Pages**, designed to help learn the Polish language.
 
+![icon](./icon.png)
+
 The project is built with a focus on:
 
 - a fast MVP
@@ -182,11 +184,14 @@ src/
 │   ├─ providers/
 │   │   └─ StorageProvider.tsx
 │   │   └─ StorageContext.ts
+│   ├─ pages/
+│   │   └─ VocabularyPage.tsx
+│   │   └─ TesterPage.tsx   # future (tester)
 │   └─ routes/               # future (tester)
 │
 ├─ features/
 │   └─ vocabulary/
-│       ├─ components/
+│       ├─ components/v
 │       │   ├─ VocabularyTable.tsx
 │       │   ├─ EditableCell.tsx
 │       │   ├─ SaveBar.tsx
