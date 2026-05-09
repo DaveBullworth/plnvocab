@@ -1,17 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-09T16:57:05.115Z",
+  "updatedAt": "2026-05-09T17:05:55.414Z",
   "entries": [
     {
       "id": "b3c5dbc8-5d30-493b-9b2d-3383679374c1",
       "pl": "zawsze",
       "ru": "всегда",
-      "isWord": true
-    },
-    {
-      "id": "8a21c633-904d-4522-b9cd-5b1d14322ac5",
-      "pl": "zwykle",
-      "ru": "обычно",
       "isWord": true
     },
     {
