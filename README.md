@@ -1,6 +1,6 @@
-# Polish Vocabulary Trainer 🇵🇱
+# Polish Vocabulary Trainer
 
-A small educational project built with **React + TypeScript**, hosted on **GitHub Pages**, designed to help learn the Polish language.
+A small educational project to help learn Polish, built with **Next.js (App Router) + TypeScript + Tailwind CSS**.
 
 ![icon](./icon.png)
 
@@ -20,14 +20,14 @@ There is a single data source — a table of entries.
 
 Each entry contains:
 
-- Polish (pl)
-- Russian (ru)
+- Polish (`pl`)
+- Russian (`ru`)
 - `isWord: boolean` — word or phrase
 
-In the UI, this is displayed as **two tables**:
+In the UI this is displayed as **two pages**:
 
-- Words
-- Phrases
+- `/words`
+- `/phrases`
 
 ### 2. Table
 
@@ -41,7 +41,7 @@ For each table:
 
 ### 3. Editing and Saving Mode
 
-Editing follows a **“game save system”** approach:
+Editing follows a **"game save system"** approach:
 
 - all changes live in the application state
 - data is **not committed automatically**
@@ -50,11 +50,11 @@ Editing follows a **“game save system”** approach:
 Before saving:
 
 - data is considered a _draft_
-- changes are persistently stored locally
+- changes are persistently stored in `localStorage`
 
 ---
 
-## Data Persistence (important)
+## Data Persistence
 
 To prevent data loss on:
 
@@ -64,24 +64,42 @@ To prevent data loss on:
 
 a hybrid approach is used.
 
+### Source of truth
+
+- a JSON file in this repo, on the `data` branch: `data/vocabulary.json`
+- read **publicly** via the GitHub raw URL (no token needed on the client)
+- written **server-side only**, via a Next.js Server Action that uses
+  `GITHUB_TOKEN` from environment variables
+
 ### Draft storage
 
 - all unsaved changes are stored in `localStorage`
-- example key: `vocabulary:draft`
+- key: `vocabulary:draft`
 
 Behavior:
 
 - on application start:
-  - if a draft exists → it is used
-  - otherwise → data is loaded from GitHub
+  - if a draft exists → it is used as the initial state
+  - otherwise → data from GitHub is shown as-is
 - on **Save changes**:
-  - data is committed to GitHub
+  - data is committed to GitHub via a Server Action
   - the draft is cleared
 
 As a result:
 
 - GitHub = source of truth
 - localStorage = temporary reliability buffer
+- the GitHub token never leaves the server
+
+---
+
+## Authentication
+
+Only the owner can edit the vocabulary. All visitors see it read-only.
+
+- a single `ADMIN_SECRET` is configured in environment variables
+- `/login` accepts the secret and sets a signed, httpOnly cookie
+- Server Actions verify the cookie before writing to GitHub
 
 ---
 
@@ -89,55 +107,26 @@ As a result:
 
 ### Core
 
-- React 18
+- Next.js 16 (App Router) + React 19
 - TypeScript
-- Vite
+- Tailwind CSS
 
-### Tables and logic
+### Tables
 
-- **@tanstack/react-table** — all table logic
-
-> Headless table — full control over the UI
-
-### UI
-
-- **Mantine**
-  - layout
-  - inputs
-  - buttons
-  - modals
-  - typography
-
-> Mantine is **not used as a ready-made data table**,  
-> only as a UI layer.
+- **@tanstack/react-table** — headless table logic, full UI control
 
 ### Icons
 
-- lucide
+- lucide-react
 
-### Styles
+### Storage
 
-- **SCSS**
-- To support SCSS in Vite, you need to install the following package:
-
-```bash
-npm install -D sass
-```
-
-- Then you can create `.scss` files and import them into components:
-
-```ts
-import "./styles/main.scss";
-```
-
-### Data storage
-
-- GitHub repository (`data` branch)
-- JSON file: `data/vocabulary.json`
+- GitHub repository (`data` branch), file `data/vocabulary.json`
+- `localStorage` for the unsaved draft
 
 ### Deployment
 
-- GitHub Pages
+- **Vercel** (native support for Server Actions and env vars)
 
 ---
 
@@ -145,8 +134,7 @@ import "./styles/main.scss";
 
 ```txt
 main      → application source code
-gh-pages  → build output for GitHub Pages
-data      → data (vocabulary.json)
+data      → vocabulary data (vocabulary.json)
 ```
 
 - the app **reads from and writes only to the `data` branch**
@@ -157,20 +145,18 @@ data      → data (vocabulary.json)
 ## Data Model
 
 ```ts
-export interface Entry = {
+export interface Entry {
   id: string;
   pl: string;
   ru: string;
   isWord: boolean;
-};
-```
+}
 
-```ts
-export interface VocabularyFile = {
+export interface VocabularyFile {
   version: number;
   updatedAt: string;
   entries: Entry[];
-};
+}
 ```
 
 ---
@@ -180,111 +166,83 @@ export interface VocabularyFile = {
 ```txt
 src/
 ├─ app/
-│   ├─ App.tsx
-│   ├─ providers/
-│   │   └─ StorageProvider.tsx
-│   │   └─ StorageContext.ts
-│   ├─ pages/
-│   │   └─ VocabularyPage.tsx
-│   │   └─ TesterPage.tsx   # future (tester)
-│   └─ routes/               # future (tester)
+│   ├─ layout.tsx
+│   ├─ page.tsx              # redirects to /words
+│   ├─ words/page.tsx
+│   ├─ phrases/page.tsx
+│   ├─ tester/page.tsx       # placeholder for future tester
+│   └─ login/page.tsx
 │
-├─ features/
-│   └─ vocabulary/
-│       ├─ components/v
-│       │   ├─ VocabularyTable.tsx
-│       │   ├─ EditableCell.tsx
-│       │   ├─ SaveBar.tsx
-│       │   └─ PolishKeyboard.tsx (future)
-│       │
-│       ├─ hooks/
-│       │   └─ useVocabulary.ts
-|       |   └─ useStorage.ts
-│       │
-│       ├─ application/
-│       │   ├─ loadVocabulary.ts
-│       │   ├─ saveVocabulary.ts
-│       │   └─ types.ts
-│       │
-│       └─ domain/
-│           ├─ Entry.ts
-│           ├─ Vocabulary.ts
-│           └─ vocabularyRules.ts
+├─ components/
+│   ├─ vocabulary/
+│   │   ├─ VocabularyTable.tsx
+│   │   └─ SaveBar.tsx
+│   └─ layout/
+│       └─ Nav.tsx
 │
-├─ shared/
-│   ├─ ui/
-│   │   ├─ Table.tsx
-│   │   └─ ConfirmDialog.tsx
+├─ lib/
+│   ├─ domain/               # entities and rules
+│   │   ├─ Entry.ts
+│   │   ├─ Vocabulary.ts
+│   │   └─ vocabularyRules.ts
 │   │
-│   ├─ lib/
-│   │   └─ debounce.ts
+│   ├─ storage/              # I/O layer
+│   │   ├─ VocabularyStorage.ts   # interface
+│   │   ├─ GitHubStorage.ts
+│   │   └─ LocalDraftStorage.ts
 │   │
-│   └─ types/
-│       └─ Brand.ts
-│
-├─ infrastructure/
-│   └─ storage/
-│       ├─ VocabularyStorage.ts   # interface
-│       ├─ GitHubStorage.ts
-│       ├─ LocalDraftStorage.ts
-│       └─ index.ts
-│
-├─ styles/
-│   └─ theme.scss
-│
-├─ main.tsx
-└─ env.d.ts
+│   ├─ actions/              # Next.js Server Actions
+│   │   ├─ saveVocabularyAction.ts
+│   │   └─ loginAction.ts
+│   │
+│   └─ auth/
+│       └─ session.ts        # cookie sign/verify, requireAdmin()
 ```
 
-### Upper-level scheme
+### Layered scheme
 
 ```txt
-UI (React)
- ↓
-Application layer (use cases)
- ↓
+UI (React components)
+  ↓
+Server Actions (write path)        ←  Server Components (read path)
+  ↓                                       ↓
+Storage layer (GitHubStorage + LocalDraftStorage)
+  ↓
 Domain (models, rules)
- ↓
-Infrastructure (storage, api)
 ```
 
-### Data storage and flow diagram
+---
 
-```pgsql
-+-----------------------+
-|       UI Layer        |  <- React components (VocabularyTable, SaveBar)
-|-----------------------|
-|  - вызывает load/save |
-|  - gets/edits entries
-+-----------+-----------+
-            |
-            | use-case functions
-            v
-+-----------------------+
-| Application Layer     |  <- loadVocabulary / saveVocabulary
-|-----------------------|
-| - knows only storage  |
-| - wraps the methods  |
-| - adds logic:  |
-|   validation, draft   |
-+-----------+-----------+
-            |
-            | It works via the interface VocabularyStorage
-            v
-+-----------------------+
-| Infrastructure Layer  |
-|-----------------------|
-| 1) LocalDraftStorage  | <- synchronous, only draft
-|    - load()           |
-|    - save()           |
-|    - clear()          |
-|                       |
-| 2) GitHubStorage      | <- asynchronous, via GitHub JSON
-|    - load() : Promise |
-|    - save() : Promise |
-+-----------------------+
+## Environment Variables
 
+Create `.env.local`:
+
+```bash
+# GitHub repo that holds the data branch
+GITHUB_OWNER=DaveBullworth
+GITHUB_REPO=plnvocab
+GITHUB_DATA_BRANCH=data
+GITHUB_DATA_PATH=data/vocabulary.json
+
+# Personal access token with `contents:write` on the repo
+GITHUB_TOKEN=ghp_xxx
+
+# Admin login secret
+ADMIN_SECRET=change-me
+# Used to sign the admin cookie (any random string)
+SESSION_SECRET=another-random-string
 ```
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Open <http://localhost:3000>.
 
 ---
 
@@ -309,6 +267,12 @@ On-screen buttons:
 - inserts characters into the active input
 - used in both the tester and editing modes
 
+### Visual Design
+
+The MVP is functionality-first. A custom design (likely adapted from a
+Figma template) will be applied as a separate phase, expressed in
+Tailwind utility classes.
+
 ---
 
-> If an MVP can’t be built in a couple of evenings, the stack is chosen incorrectly.
+> If an MVP can't be built in a couple of evenings, the stack is chosen incorrectly.
