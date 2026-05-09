@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function EditableCell({
   value,
@@ -12,10 +12,12 @@ export function EditableCell({
   placeholder?: string;
 }) {
   const [local, setLocal] = useState(value);
+  const [prevValue, setPrevValue] = useState(value);
 
-  useEffect(() => {
+  if (value !== prevValue) {
+    setPrevValue(value);
     setLocal(value);
-  }, [value]);
+  }
 
   return (
     <input

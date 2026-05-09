@@ -1,97 +1,75 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import type { Entry } from "@/lib/domain/Entry";
 import { createEntry } from "@/lib/domain/vocabularyRules";
-import { localDraftStorage } from "@/lib/storage/LocalDraftStorage";
+import {
+  clearDraft,
+  getDraft,
+  setDraft,
+  subscribeDraft,
+} from "@/lib/storage/LocalDraftStorage";
+
+const noopSubscribe = () => () => {};
+const returnNull = () => null;
+
+function useDraft(enabled: boolean): Entry[] | null {
+  return useSyncExternalStore(
+    enabled ? subscribeDraft : noopSubscribe,
+    enabled ? getDraft : returnNull,
+    returnNull,
+  );
+}
 
 export interface UseVocabularyResult {
   entries: Entry[];
   isDirty: boolean;
-  hydrated: boolean;
   addEntry: (isWord: boolean) => void;
   updateEntry: (id: string, patch: Partial<Entry>) => void;
   removeEntry: (id: string) => void;
   discard: () => void;
-  markSaved: (cleaned: Entry[]) => void;
+  markSaved: () => void;
 }
 
 export function useVocabulary(
   initial: Entry[],
   { enableDraft }: { enableDraft: boolean },
 ): UseVocabularyResult {
-  const [entries, setEntries] = useState<Entry[]>(initial);
-  const [isDirty, setIsDirty] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
+  const draft = useDraft(enableDraft);
+  const entries = draft ?? initial;
+  const isDirty = enableDraft && draft !== null;
 
-  useEffect(() => {
-    if (enableDraft) {
-      const draft = localDraftStorage.load();
-      if (draft) {
-        setEntries(draft);
-        setIsDirty(true);
-      }
-    }
-    setHydrated(true);
-  }, [enableDraft]);
-
-  const persist = useCallback((next: Entry[]) => {
-    localDraftStorage.save(next);
-  }, []);
+  const mutate = useCallback(
+    (mutator: (current: Entry[]) => Entry[]) => {
+      if (!enableDraft) return;
+      const current = getDraft() ?? initial;
+      setDraft(mutator(current));
+    },
+    [enableDraft, initial],
+  );
 
   const addEntry = useCallback(
-    (isWord: boolean) => {
-      const fresh = createEntry(isWord);
-      setEntries((prev) => {
-        const next = [...prev, fresh];
-        persist(next);
-        return next;
-      });
-      setIsDirty(true);
-    },
-    [persist],
+    (isWord: boolean) => mutate((cur) => [...cur, createEntry(isWord)]),
+    [mutate],
   );
 
   const updateEntry = useCallback(
-    (id: string, patch: Partial<Entry>) => {
-      setEntries((prev) => {
-        const next = prev.map((e) => (e.id === id ? { ...e, ...patch } : e));
-        persist(next);
-        return next;
-      });
-      setIsDirty(true);
-    },
-    [persist],
+    (id: string, patch: Partial<Entry>) =>
+      mutate((cur) => cur.map((e) => (e.id === id ? { ...e, ...patch } : e))),
+    [mutate],
   );
 
   const removeEntry = useCallback(
-    (id: string) => {
-      setEntries((prev) => {
-        const next = prev.filter((e) => e.id !== id);
-        persist(next);
-        return next;
-      });
-      setIsDirty(true);
-    },
-    [persist],
+    (id: string) => mutate((cur) => cur.filter((e) => e.id !== id)),
+    [mutate],
   );
 
-  const discard = useCallback(() => {
-    localDraftStorage.clear();
-    setEntries(initial);
-    setIsDirty(false);
-  }, [initial]);
-
-  const markSaved = useCallback((cleaned: Entry[]) => {
-    localDraftStorage.clear();
-    setEntries(cleaned);
-    setIsDirty(false);
-  }, []);
+  const discard = useCallback(() => clearDraft(), []);
+  const markSaved = useCallback(() => clearDraft(), []);
 
   return {
     entries,
     isDirty,
-    hydrated,
     addEntry,
     updateEntry,
     removeEntry,

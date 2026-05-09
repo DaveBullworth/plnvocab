@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { saveVocabularyAction } from "@/lib/actions/saveVocabularyAction";
 import type { Entry } from "@/lib/domain/Entry";
-import { isFilledEntry } from "@/lib/domain/vocabularyRules";
 
 export function SaveBar({
   entries,
@@ -16,7 +15,7 @@ export function SaveBar({
   entries: Entry[];
   isDirty: boolean;
   onDiscard: () => void;
-  onSaved: (cleaned: Entry[]) => void;
+  onSaved: () => void;
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -48,8 +47,7 @@ export function SaveBar({
               startTransition(async () => {
                 try {
                   await saveVocabularyAction(entries);
-                  const cleaned = entries.filter(isFilledEntry);
-                  onSaved(cleaned);
+                  onSaved();
                   router.refresh();
                 } catch (e) {
                   setError(e instanceof Error ? e.message : "Failed to save");

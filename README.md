@@ -67,9 +67,11 @@ a hybrid approach is used.
 ### Source of truth
 
 - a JSON file in this repo, on the `data` branch: `data/vocabulary.json`
-- read **publicly** via the GitHub raw URL (no token needed on the client)
-- written **server-side only**, via a Next.js Server Action that uses
-  `GITHUB_TOKEN` from environment variables
+- read and written via the **GitHub Contents API** (server-side only),
+  with `cache: "no-store"` so changes show up immediately. Reading via
+  `raw.githubusercontent.com` was tried first but was abandoned — its
+  CDN can lag for minutes after a commit.
+- token comes from `GITHUB_TOKEN` env var; never reaches the client
 
 ### Draft storage
 

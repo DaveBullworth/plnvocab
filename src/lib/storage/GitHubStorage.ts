@@ -31,25 +31,36 @@ function getConfig(): GitHubConfig {
   };
 }
 
-function rawUrl(c: GitHubConfig): string {
-  return `https://raw.githubusercontent.com/${c.owner}/${c.repo}/${c.branch}/${c.path}`;
+function getToken(): string {
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) throw new Error("GITHUB_TOKEN is not set");
+  return token;
 }
 
-function apiUrl(c: GitHubConfig): string {
+function contentsUrl(c: GitHubConfig): string {
   return `https://api.github.com/repos/${c.owner}/${c.repo}/contents/${c.path}`;
 }
 
-function authHeaders(token: string): HeadersInit {
+function authHeaders(
+  token: string,
+  extra?: Record<string, string>,
+): HeadersInit {
   return {
     Authorization: `Bearer ${token}`,
-    Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
+    ...extra,
   };
 }
 
 export async function loadVocabulary(): Promise<VocabularyFile> {
   const c = getConfig();
-  const res = await fetch(rawUrl(c), { next: { revalidate: 60 } });
+  const token = getToken();
+
+  const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
+    headers: authHeaders(token, { Accept: "application/vnd.github.raw" }),
+    cache: "no-store",
+  });
+
   if (res.status === 404) {
     return EMPTY_VOCABULARY;
   }
@@ -65,11 +76,8 @@ export async function loadVocabulary(): Promise<VocabularyFile> {
 export async function saveVocabulary(
   entries: Entry[],
 ): Promise<VocabularyFile> {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) {
-    throw new Error("GITHUB_TOKEN is not set");
-  }
   const c = getConfig();
+  const token = getToken();
 
   const file: VocabularyFile = {
     version: CURRENT_VOCABULARY_VERSION,
@@ -82,9 +90,9 @@ export async function saveVocabulary(
   );
   const sha = await getCurrentFileSha(c, token);
 
-  const res = await fetch(`${apiUrl(c)}?ref=${c.branch}`, {
+  const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
     method: "PUT",
-    headers: authHeaders(token),
+    headers: authHeaders(token, { Accept: "application/vnd.github+json" }),
     body: JSON.stringify({
       message: `Update vocabulary (${entries.length} entries)`,
       content,
@@ -105,8 +113,8 @@ async function getCurrentFileSha(
   c: GitHubConfig,
   token: string,
 ): Promise<string | undefined> {
-  const res = await fetch(`${apiUrl(c)}?ref=${c.branch}`, {
-    headers: authHeaders(token),
+  const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
+    headers: authHeaders(token, { Accept: "application/vnd.github+json" }),
     cache: "no-store",
   });
   if (res.status === 404) return undefined;
