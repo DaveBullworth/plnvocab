@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { requireAdmin } from "@/lib/auth/session";
 import type { Entry } from "@/lib/domain/Entry";
 import { isFilledEntry } from "@/lib/domain/vocabularyRules";
 import { saveVocabulary } from "@/lib/storage/GitHubStorage";
@@ -14,6 +15,7 @@ export interface SaveVocabularyResult {
 export async function saveVocabularyAction(
   entries: Entry[],
 ): Promise<SaveVocabularyResult> {
+  await requireAdmin();
   const cleaned = entries.filter(isFilledEntry);
   const file = await saveVocabulary(cleaned);
 
