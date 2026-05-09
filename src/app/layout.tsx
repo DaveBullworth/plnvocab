@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AdminProvider } from "@/components/auth/AdminProvider";
+import { Nav } from "@/components/layout/Nav";
 import { getAdminFromCookies } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
@@ -18,7 +19,10 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <AdminProvider isAdmin={isAdmin}>{children}</AdminProvider>
+        <AdminProvider isAdmin={isAdmin}>
+          <Nav />
+          {children}
+        </AdminProvider>
       </body>
     </html>
   );
