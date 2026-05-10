@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { updateTag } from "next/cache";
 import { requireAdmin } from "@/lib/auth/session";
 import type { Entry } from "@/lib/domain/Entry";
 import { isFilledEntry } from "@/lib/domain/vocabularyRules";
@@ -19,8 +19,7 @@ export async function saveVocabularyAction(
   const cleaned = entries.filter(isFilledEntry);
   const file = await saveVocabulary(cleaned);
 
-  revalidatePath("/words");
-  revalidatePath("/phrases");
+  updateTag("vocabulary");
 
   return { ok: true, total: cleaned.length, updatedAt: file.updatedAt };
 }

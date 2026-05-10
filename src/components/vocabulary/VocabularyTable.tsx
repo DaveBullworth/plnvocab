@@ -42,6 +42,7 @@ export function VocabularyTable({
             <EditableCell
               value={row.original.pl}
               placeholder="po polsku"
+              polishHelper
               onCommit={(v) => onUpdate(row.original.id, { pl: v })}
             />
           ) : (
@@ -116,6 +117,12 @@ export function VocabularyTable({
         )}
       </div>
 
+      <p className="text-xs opacity-60">
+        quantity: {entries.length}
+        {globalFilter !== "" &&
+          ` / filtered: ${table.getFilteredRowModel().rows.length}`}
+      </p>
+
       <table className="w-full border-collapse text-sm">
         <thead>
           {table.getHeaderGroups().map((hg) => (
@@ -133,9 +140,15 @@ export function VocabularyTable({
                         className="flex items-center gap-1"
                       >
                         {flexRender(h.column.columnDef.header, h.getContext())}
-                        {sorted === "asc" && <ChevronUp className="h-3 w-3" />}
-                        {sorted === "desc" && (
-                          <ChevronDown className="h-3 w-3" />
+                        {canSort && (
+                          <span className="inline-flex h-3 w-3 items-center justify-center">
+                            {sorted === "asc" && (
+                              <ChevronUp className="h-3 w-3" />
+                            )}
+                            {sorted === "desc" && (
+                              <ChevronDown className="h-3 w-3" />
+                            )}
+                          </span>
                         )}
                       </button>
                     )}

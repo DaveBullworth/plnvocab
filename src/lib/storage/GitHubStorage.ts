@@ -58,7 +58,8 @@ export async function loadVocabulary(): Promise<VocabularyFile> {
 
   const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
     headers: authHeaders(token, { Accept: "application/vnd.github.raw" }),
-    cache: "no-store",
+    cache: "force-cache",
+    next: { tags: ["vocabulary"] },
   });
 
   if (res.status === 404) {

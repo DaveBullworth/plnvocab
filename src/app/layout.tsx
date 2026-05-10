@@ -3,6 +3,7 @@ import "./globals.css";
 import { AdminProvider } from "@/components/auth/AdminProvider";
 import { Nav } from "@/components/layout/Nav";
 import { getAdminFromCookies } from "@/lib/auth/session";
+import { getThemeFromCookies } from "@/lib/theme/themeCookie";
 
 export const metadata: Metadata = {
   title: "Polish Vocabulary Trainer",
@@ -14,13 +15,20 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isAdmin = await getAdminFromCookies();
+  const [isAdmin, theme] = await Promise.all([
+    getAdminFromCookies(),
+    getThemeFromCookies(),
+  ]);
+  const isDark = theme === "dark";
 
   return (
-    <html lang="en" className="h-full antialiased">
+    <html
+      lang="en"
+      className={`h-full antialiased${isDark ? " dark" : ""}`}
+    >
       <body className="min-h-full flex flex-col">
         <AdminProvider isAdmin={isAdmin}>
-          <Nav />
+          <Nav isDark={isDark} />
           {children}
         </AdminProvider>
       </body>
