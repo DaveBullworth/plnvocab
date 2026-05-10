@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T12:02:42.945Z",
+  "updatedAt": "2026-05-10T12:47:53.969Z",
   "entries": [
     {
       "id": "b2d330b7-ed9b-4afa-ab94-9c6fad0c2eaf",
@@ -1014,6 +1014,12 @@
       "id": "e048ac89-7532-41c3-9615-f98251f7b8b0",
       "pl": "zszokowany",
       "ru": "шокированный",
+      "isWord": true
+    },
+    {
+      "id": "945e8413-7eae-412b-a743-587f88d629f4",
+      "pl": "odzież",
+      "ru": "одежда",
       "isWord": true
     }
   ]
