@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-09T17:05:55.414Z",
+  "updatedAt": "2026-05-10T08:38:29.810Z",
   "entries": [
     {
       "id": "b3c5dbc8-5d30-493b-9b2d-3383679374c1",
@@ -12,6 +12,18 @@
       "id": "a6d5e863-4591-4c0a-9ba9-d869ad81f776",
       "pl": "Na pierwszy rzut oka",
       "ru": "На первый взгляд",
+      "isWord": false
+    },
+    {
+      "id": "75571231-927b-4e15-bf92-83fba4963c1c",
+      "pl": "nóż",
+      "ru": "нож",
+      "isWord": true
+    },
+    {
+      "id": "855c4575-3927-4e88-b755-c89ba5fb7af3",
+      "pl": "Szczerze mówiąc",
+      "ru": "Честно говоря",
       "isWord": false
     }
   ]
