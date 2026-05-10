@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T08:40:59.807Z",
+  "updatedAt": "2026-05-10T09:49:21.501Z",
   "entries": [
     {
       "id": "a6d5e863-4591-4c0a-9ba9-d869ad81f776",
@@ -13,6 +13,24 @@
       "pl": "nóż",
       "ru": "нож",
       "isWord": true
+    },
+    {
+      "id": "b8991558-aee9-4a11-a020-59f875ec12fc",
+      "pl": "anioł",
+      "ru": "ангел",
+      "isWord": true
+    },
+    {
+      "id": "921f2ed7-8c86-4f8e-a4e1-afa1d2f441af",
+      "pl": "Szczerze mówiąc",
+      "ru": "Честно говоря",
+      "isWord": false
+    },
+    {
+      "id": "5f9573ee-2022-4064-95a8-721656e3d5b0",
+      "pl": "Średniego wzrostu",
+      "ru": "Среднего роста",
+      "isWord": false
     }
   ]
 }
