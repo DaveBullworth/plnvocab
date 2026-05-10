@@ -1,36 +1,1020 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T09:49:21.501Z",
+  "updatedAt": "2026-05-10T12:02:42.945Z",
   "entries": [
     {
-      "id": "a6d5e863-4591-4c0a-9ba9-d869ad81f776",
-      "pl": "Na pierwszy rzut oka",
-      "ru": "На первый взгляд",
-      "isWord": false
-    },
-    {
-      "id": "75571231-927b-4e15-bf92-83fba4963c1c",
-      "pl": "nóż",
-      "ru": "нож",
-      "isWord": true
-    },
-    {
-      "id": "b8991558-aee9-4a11-a020-59f875ec12fc",
+      "id": "b2d330b7-ed9b-4afa-ab94-9c6fad0c2eaf",
       "pl": "anioł",
       "ru": "ангел",
       "isWord": true
     },
     {
-      "id": "921f2ed7-8c86-4f8e-a4e1-afa1d2f441af",
-      "pl": "Szczerze mówiąc",
-      "ru": "Честно говоря",
+      "id": "3ed21898-fcc7-46fa-9692-0f10d01e0a3d",
+      "pl": "Ambitny",
+      "ru": "Амбициозный",
+      "isWord": true
+    },
+    {
+      "id": "96dc0d63-f5cc-49a6-a3d3-bdff45acbea5",
+      "pl": "architect",
+      "ru": "архитектор",
+      "isWord": true
+    },
+    {
+      "id": "abe2f98d-aebf-4565-bbc4-000c04197e0b",
+      "pl": "Arogancki",
+      "ru": "Наглый/ грубый",
+      "isWord": true
+    },
+    {
+      "id": "c5696fc7-82d0-44e2-a74a-abc69754ea83",
+      "pl": "bezczelność",
+      "ru": "наглость",
+      "isWord": true
+    },
+    {
+      "id": "215356b6-ff0a-4e55-805c-cb5154a8220c",
+      "pl": "boisko",
+      "ru": "площадка",
+      "isWord": true
+    },
+    {
+      "id": "4b4e0916-4320-4a63-ace5-7f7be0ce9863",
+      "pl": "Budowlaniec",
+      "ru": "Строитель",
+      "isWord": true
+    },
+    {
+      "id": "32472235-1a9d-4cb3-91b3-1ef0cba73dc6",
+      "pl": "Budowniczy",
+      "ru": "Строитель",
+      "isWord": true
+    },
+    {
+      "id": "d4670433-9fd1-46b8-85b6-950bab2b1e12",
+      "pl": "butny",
+      "ru": "высокомерный",
+      "isWord": true
+    },
+    {
+      "id": "a3fab19f-04bc-45eb-a276-67540d29aeb0",
+      "pl": "buzię",
+      "ru": "рот",
+      "isWord": true
+    },
+    {
+      "id": "4143800d-d1b4-49da-ac0c-652498c4a2ab",
+      "pl": "brew",
+      "ru": "бровь",
+      "isWord": true
+    },
+    {
+      "id": "ede2b58c-999b-4996-aae9-68ce4c21c5d6",
+      "pl": "broda",
+      "ru": "подбородок",
+      "isWord": true
+    },
+    {
+      "id": "7c2f6a92-2634-46dd-b9de-241cc6342b13",
+      "pl": "ciastko/ciasteczka",
+      "ru": "печенье/печенька",
+      "isWord": true
+    },
+    {
+      "id": "8ba25512-5109-4a82-aaa2-d00fd3728733",
+      "pl": "cokolwiek",
+      "ru": "немного",
+      "isWord": true
+    },
+    {
+      "id": "f5a4dd68-b848-4a0f-9cef-0eb56cbcc803",
+      "pl": "chusteczka",
+      "ru": "салфетка",
+      "isWord": true
+    },
+    {
+      "id": "adf315a5-4c97-43a4-8314-dbdf41f80329",
+      "pl": "czasownik",
+      "ru": "глагол",
+      "isWord": true
+    },
+    {
+      "id": "a104697a-9173-4d17-98dd-f938a07018ad",
+      "pl": "czoło",
+      "ru": "лоб",
+      "isWord": true
+    },
+    {
+      "id": "338f6504-87b2-4d68-9fac-d21eba6492ee",
+      "pl": "czyniąc",
+      "ru": "делает",
+      "isWord": true
+    },
+    {
+      "id": "ce14ebe3-81d3-40cd-a65c-c0f409bbf836",
+      "pl": "czyli",
+      "ru": "т.е.",
+      "isWord": true
+    },
+    {
+      "id": "f20132dc-9487-46b9-9a06-aac5cfe9fb71",
+      "pl": "danie",
+      "ru": "блюдо",
+      "isWord": true
+    },
+    {
+      "id": "abad7d3d-495b-40cd-b3df-cbcf22a88d4b",
+      "pl": "deser",
+      "ru": "десерт",
+      "isWord": true
+    },
+    {
+      "id": "b3582cce-0e69-4516-bdc0-b780b62e85f9",
+      "pl": "dziennikarz",
+      "ru": "журналист",
+      "isWord": true
+    },
+    {
+      "id": "57f978fd-67b2-4fda-8088-619713283f83",
+      "pl": "dziękuję",
+      "ru": "Спасибо/Благодарю",
+      "isWord": true
+    },
+    {
+      "id": "79527a6b-80bf-4a97-9da7-2f4bae8a5479",
+      "pl": "dentysta",
+      "ru": "дантист",
+      "isWord": true
+    },
+    {
+      "id": "32542e6f-d629-4ffc-a647-25b962c51569",
+      "pl": "dodować otuchy",
+      "ru": "подбадривать",
       "isWord": false
     },
     {
-      "id": "5f9573ee-2022-4064-95a8-721656e3d5b0",
-      "pl": "Średniego wzrostu",
-      "ru": "Среднего роста",
+      "id": "732173a7-da8a-43de-ba33-7a1adb7426ac",
+      "pl": "doktor",
+      "ru": "доктор",
+      "isWord": true
+    },
+    {
+      "id": "bf73eee0-7158-434c-94ac-b6baf6708359",
+      "pl": "doświadczenie",
+      "ru": "опыт",
+      "isWord": true
+    },
+    {
+      "id": "9572d43c-7e42-4d3d-ac30-5524efb43023",
+      "pl": "fajnie",
+      "ru": "Отлично",
+      "isWord": true
+    },
+    {
+      "id": "3a64688d-6ffc-46cb-b5dc-7bdb73231ac0",
+      "pl": "fryzjer",
+      "ru": "парикмахерская, парикмахер.",
+      "isWord": true
+    },
+    {
+      "id": "83d2064d-0f4a-4724-a66b-9a517c7d50d9",
+      "pl": "granatowy",
+      "ru": "темно-синий",
+      "isWord": true
+    },
+    {
+      "id": "0e64110f-2acc-4704-9d5a-c8a5ab97689f",
+      "pl": "gruby",
+      "ru": "толстый",
+      "isWord": true
+    },
+    {
+      "id": "2eb9c8e9-bdd2-49a4-8b52-5e80ec1e819a",
+      "pl": "Grzeczny",
+      "ru": "вежливый",
+      "isWord": true
+    },
+    {
+      "id": "796e300e-fcd9-4911-afa1-015b19f6286c",
+      "pl": "gumka",
+      "ru": "ластик",
+      "isWord": true
+    },
+    {
+      "id": "019b717f-9ac4-4727-9c03-ab50abb212c5",
+      "pl": "hydraulik",
+      "ru": "водопроводчик, сантехник",
+      "isWord": true
+    },
+    {
+      "id": "ff05595c-42a3-44f4-9587-5768922a0193",
+      "pl": "interesujący",
+      "ru": "интересный",
+      "isWord": true
+    },
+    {
+      "id": "3fe3e8de-cf91-4c9e-94ff-98b7fadceaee",
+      "pl": "jak się masz",
+      "ru": "Как себя чувствуешь?",
       "isWord": false
+    },
+    {
+      "id": "0b7c2b17-a109-4dfd-9225-ba498ddce7d6",
+      "pl": "język",
+      "ru": "язык",
+      "isWord": true
+    },
+    {
+      "id": "57190745-d554-4790-bfdf-17e481e5c6fc",
+      "pl": "jubileusz",
+      "ru": "юбилей",
+      "isWord": true
+    },
+    {
+      "id": "44fed703-7231-4070-ac84-103e9f371719",
+      "pl": "kazanie",
+      "ru": "проповедь",
+      "isWord": true
+    },
+    {
+      "id": "23352085-ee95-4bd1-89e5-113102c9342c",
+      "pl": "kolejne",
+      "ru": "ещё, следующее",
+      "isWord": true
+    },
+    {
+      "id": "90c68543-5b5d-467a-aa9d-c3ccd62fab87",
+      "pl": "komórka",
+      "ru": "клетка, ячейка, мобильник",
+      "isWord": true
+    },
+    {
+      "id": "97335db4-adea-4aa0-b434-aef88dfdf852",
+      "pl": "krawat",
+      "ru": "галстук",
+      "isWord": true
+    },
+    {
+      "id": "1fcb6324-ba0f-4070-82e9-3638ad3c2f46",
+      "pl": "Krawcowa",
+      "ru": "швея",
+      "isWord": true
+    },
+    {
+      "id": "6ee2b036-8df1-4da0-9322-3de303ee7078",
+      "pl": "krzesło",
+      "ru": "стул",
+      "isWord": true
+    },
+    {
+      "id": "b38f0f98-eb4d-4987-82f4-ecad2c4f439d",
+      "pl": "kurczak",
+      "ru": "курица",
+      "isWord": true
+    },
+    {
+      "id": "9abe9dd9-a1e0-425a-8f2d-6c3c84283ecd",
+      "pl": "kuzyn",
+      "ru": "кузен (2-ый брат)",
+      "isWord": true
+    },
+    {
+      "id": "08ab629b-b596-4278-b8ad-38bf9ec199d1",
+      "pl": "lata",
+      "ru": "года",
+      "isWord": true
+    },
+    {
+      "id": "1d42fffe-958a-49f6-bf27-fc91f83428bc",
+      "pl": "liczebniki",
+      "ru": "числительные",
+      "isWord": true
+    },
+    {
+      "id": "960a67dd-ec19-4d3e-bc2d-c29faea905ea",
+      "pl": "lubię",
+      "ru": "люблю (нравится не романтично)",
+      "isWord": true
+    },
+    {
+      "id": "44979c36-fa11-4407-ba87-a39d63d58d71",
+      "pl": "lustro | zwierciadło",
+      "ru": "зеркало",
+      "isWord": false
+    },
+    {
+      "id": "8510bd97-66a6-483b-8572-eb15edd5468f",
+      "pl": "łyżka",
+      "ru": "ложка",
+      "isWord": true
+    },
+    {
+      "id": "b987dfac-648e-4945-818e-d741baa30ae9",
+      "pl": "łyżwy",
+      "ru": "коньки",
+      "isWord": true
+    },
+    {
+      "id": "d3c4c0d7-47d6-4eda-99d9-0e28695d9b54",
+      "pl": "ładna",
+      "ru": "красивая(женщина)",
+      "isWord": true
+    },
+    {
+      "id": "f53c4307-6855-46e0-8185-cd2c5232f3e2",
+      "pl": "łapać",
+      "ru": "ловить",
+      "isWord": true
+    },
+    {
+      "id": "723b069f-b800-4e3d-9d89-b7c67c6cd4ec",
+      "pl": "malarz",
+      "ru": "художник",
+      "isWord": true
+    },
+    {
+      "id": "10d41b49-bf8b-4889-88d0-d80ba74e432f",
+      "pl": "marynarka",
+      "ru": "куртка",
+      "isWord": true
+    },
+    {
+      "id": "1021d075-df08-44be-86a0-99497493bd29",
+      "pl": "mysz",
+      "ru": "мышь",
+      "isWord": true
+    },
+    {
+      "id": "b76cbe66-8aef-45ed-b99f-a654ec243663",
+      "pl": "mieć rację",
+      "ru": "быть правым (иметь смысл)",
+      "isWord": false
+    },
+    {
+      "id": "6080f54f-c477-412d-a5b5-a8ac9667f443",
+      "pl": "Muzyk",
+      "ru": "музыка, музыкант",
+      "isWord": true
+    },
+    {
+      "id": "c24b77b9-5ca1-4d7e-b998-8076966f726e",
+      "pl": "naczynia",
+      "ru": "посуда",
+      "isWord": true
+    },
+    {
+      "id": "91f202db-8d32-4ed9-85db-c48a473a2dd6",
+      "pl": "nadal",
+      "ru": "до сих пор",
+      "isWord": true
+    },
+    {
+      "id": "0a5101e8-5ed5-4da5-b01c-1687292b373e",
+      "pl": "nadziwić",
+      "ru": "восхищаться",
+      "isWord": true
+    },
+    {
+      "id": "68de8516-d7b6-4741-9cf4-0d9f0eff30c6",
+      "pl": "nagle",
+      "ru": "внезапно",
+      "isWord": true
+    },
+    {
+      "id": "504a0725-b78b-45a6-b5a2-67a0dd0b8762",
+      "pl": "nagrywać",
+      "ru": "записывать",
+      "isWord": true
+    },
+    {
+      "id": "9e2aef56-26c5-403d-aac3-dda51b7f92fb",
+      "pl": "narty",
+      "ru": "лыжи",
+      "isWord": true
+    },
+    {
+      "id": "9074d9b7-8f12-4f78-9b34-98da41931a74",
+      "pl": "na opak",
+      "ru": "криво (с ног на голову)",
+      "isWord": false
+    },
+    {
+      "id": "cd3ce759-58e4-4fee-b7d4-76147df18bb6",
+      "pl": "Na pierwszy rzut oka",
+      "ru": "на первый взгляд",
+      "isWord": false
+    },
+    {
+      "id": "6e4ffb01-08ba-4906-9e3c-5baa7563e61f",
+      "pl": "narażają",
+      "ru": "подвергают",
+      "isWord": true
+    },
+    {
+      "id": "c2f84e45-6e42-4c28-b4b1-daa5b6faed4f",
+      "pl": "na tyle",
+      "ru": "достаточно",
+      "isWord": false
+    },
+    {
+      "id": "f975b2d6-2171-4ef4-942b-3ccfa72e578a",
+      "pl": "niestety",
+      "ru": "к сожалению, увы.",
+      "isWord": true
+    },
+    {
+      "id": "8fea9aed-a704-4836-936a-90689e924f11",
+      "pl": "nóż",
+      "ru": "нож",
+      "isWord": true
+    },
+    {
+      "id": "35aabe1f-9845-4c69-a04d-aded90d71e36",
+      "pl": "obcy",
+      "ru": "чужой",
+      "isWord": true
+    },
+    {
+      "id": "c81c6087-a43c-487a-95a3-50a5affd9860",
+      "pl": "obejrzeć",
+      "ru": "видеть",
+      "isWord": true
+    },
+    {
+      "id": "d5594175-9371-4426-98ec-0284e1ece1d2",
+      "pl": "ogarnia",
+      "ru": "охватывает",
+      "isWord": true
+    },
+    {
+      "id": "8daf5c82-04a2-48d4-9711-27eabb44164f",
+      "pl": "odbicie",
+      "ru": "отражение",
+      "isWord": true
+    },
+    {
+      "id": "d91b63ed-7004-49c6-8094-253a5fdfa388",
+      "pl": "odsapnął",
+      "ru": "вздохнул, сделал вздох.",
+      "isWord": true
+    },
+    {
+      "id": "c0024364-60a8-4382-8715-abad640e67d2",
+      "pl": "ochroniarz",
+      "ru": "охранник",
+      "isWord": true
+    },
+    {
+      "id": "eb4d2c4b-4444-465e-a91f-aeaa808f9382",
+      "pl": "okruszki",
+      "ru": "крошки (кусочки)",
+      "isWord": true
+    },
+    {
+      "id": "fc7c1404-7beb-4142-9c14-249c6229a057",
+      "pl": "opalam się",
+      "ru": "загорать",
+      "isWord": false
+    },
+    {
+      "id": "07e99c9e-8675-4b44-b922-5454b5abe9f8",
+      "pl": "oszczędnościowy",
+      "ru": "сберегательный",
+      "isWord": true
+    },
+    {
+      "id": "3f763794-6438-41ac-8c0a-b522497ea64b",
+      "pl": "paliwo",
+      "ru": "топливо",
+      "isWord": true
+    },
+    {
+      "id": "dc11c2a3-accb-4962-bc6c-110d6eb6d86d",
+      "pl": "pajacyk",
+      "ru": "клоун",
+      "isWord": true
+    },
+    {
+      "id": "10f3e844-9427-4513-94e0-598c05df6142",
+      "pl": "pewny siebie",
+      "ru": "уверенный в себе",
+      "isWord": false
+    },
+    {
+      "id": "20b0bf0b-ea6c-4cc8-bc3e-8386397ed856",
+      "pl": "policzki",
+      "ru": "щеки",
+      "isWord": true
+    },
+    {
+      "id": "7fecdbe3-16b4-45cd-a359-fc752ea6d97f",
+      "pl": "poświęcenie",
+      "ru": "жертва",
+      "isWord": true
+    },
+    {
+      "id": "4e48dab5-c8b1-46e3-a255-2c144e954481",
+      "pl": "powtórzyć",
+      "ru": "повторить",
+      "isWord": true
+    },
+    {
+      "id": "f37d6d87-0b22-437c-890d-862d9c70d9f5",
+      "pl": "pianka",
+      "ru": "пенка (мыло)",
+      "isWord": true
+    },
+    {
+      "id": "987debec-60a3-43e9-8889-972fddf00e39",
+      "pl": "piłka",
+      "ru": "мяч",
+      "isWord": true
+    },
+    {
+      "id": "195faeae-cef8-4791-82bc-6e8b0f9fc0cb",
+      "pl": "piłka nożna",
+      "ru": "футбол",
+      "isWord": false
+    },
+    {
+      "id": "12a9a7a7-b892-4354-9924-c7a7d952bab8",
+      "pl": "piłkarz",
+      "ru": "футболист",
+      "isWord": true
+    },
+    {
+      "id": "0d24a0fa-ed8c-4497-bb1a-707b054f6b0f",
+      "pl": "piękny",
+      "ru": "красивый",
+      "isWord": true
+    },
+    {
+      "id": "2e2f6da5-3a45-4f12-a768-d4782a97ca65",
+      "pl": "pióro",
+      "ru": "Перу",
+      "isWord": true
+    },
+    {
+      "id": "7d3868cf-ea13-491d-8ef4-07c1dee2bb01",
+      "pl": "Projektant",
+      "ru": "дизайнер",
+      "isWord": true
+    },
+    {
+      "id": "d5c2c914-e781-4f45-af80-5f8da9fee618",
+      "pl": "przedsiębiorca",
+      "ru": "предприниматель",
+      "isWord": true
+    },
+    {
+      "id": "1b160ccd-b878-48f2-9a0b-2889cdb2d620",
+      "pl": "przepraszam",
+      "ru": "извиняюсь",
+      "isWord": true
+    },
+    {
+      "id": "29f43cac-6085-4db3-8513-c2656db5bf8c",
+      "pl": "przerażające",
+      "ru": "ужасающий",
+      "isWord": true
+    },
+    {
+      "id": "745de47e-6de3-4b38-a71e-67ef50127742",
+      "pl": "przymiotnik",
+      "ru": "прилагательное",
+      "isWord": true
+    },
+    {
+      "id": "26d69fe3-e82d-4049-b01a-02e394ed4747",
+      "pl": "przyjazny",
+      "ru": "дружелюбный",
+      "isWord": true
+    },
+    {
+      "id": "f8450145-f198-4d96-b173-b29fea8063f1",
+      "pl": "przystojny",
+      "ru": "красивый (мужчина)",
+      "isWord": true
+    },
+    {
+      "id": "54c4e51e-83a4-45fd-823f-a48d8a132947",
+      "pl": "raczej",
+      "ru": "скорее",
+      "isWord": true
+    },
+    {
+      "id": "7d24421f-f604-44e5-8686-eec4771ee2d0",
+      "pl": "rano",
+      "ru": "утро",
+      "isWord": true
+    },
+    {
+      "id": "78c05f1a-3870-4f4f-9647-2209f22e46bc",
+      "pl": "rekin",
+      "ru": "акула",
+      "isWord": true
+    },
+    {
+      "id": "4c5967d5-9226-4afc-8ad3-c58ef3e6fc1d",
+      "pl": "rozczarowany",
+      "ru": "разочарованный",
+      "isWord": true
+    },
+    {
+      "id": "0a1145b5-cae2-42f6-b8a4-ef1729c9d8d0",
+      "pl": "rozzłościł",
+      "ru": "разозлил",
+      "isWord": true
+    },
+    {
+      "id": "ba422036-f59f-4366-b80d-d5c9dce481c9",
+      "pl": "rzec",
+      "ru": "сказать",
+      "isWord": true
+    },
+    {
+      "id": "860925e7-3ce9-48df-9189-0ac5d8ec16f9",
+      "pl": "rzeczownik",
+      "ru": "существительное",
+      "isWord": true
+    },
+    {
+      "id": "f149586e-8e60-4533-99b2-f1e7ee5bb4ea",
+      "pl": "rzeczywiście",
+      "ru": "действительно, на самом деле, честно говоря",
+      "isWord": true
+    },
+    {
+      "id": "48729a71-71ce-4c6a-b73b-1bb1981d823e",
+      "pl": "rzęsy",
+      "ru": "ресницы",
+      "isWord": true
+    },
+    {
+      "id": "eed80e7c-44a5-4585-b484-774e33b04b1d",
+      "pl": "salon",
+      "ru": "салон, гостинная",
+      "isWord": true
+    },
+    {
+      "id": "2f04ed28-abc1-4ef4-a8c6-31bcc89b8aae",
+      "pl": "samochód",
+      "ru": "автомобиль",
+      "isWord": true
+    },
+    {
+      "id": "fd902b30-c848-488f-b872-8142e6c29b51",
+      "pl": "samotny",
+      "ru": "одинокий",
+      "isWord": true
+    },
+    {
+      "id": "598b7011-bc3c-462f-ad53-cc6eee125196",
+      "pl": "segregator",
+      "ru": "скоросшиватель",
+      "isWord": true
+    },
+    {
+      "id": "820cfbe8-d3cd-40e0-beec-b754c584f4d0",
+      "pl": "senny",
+      "ru": "сонный",
+      "isWord": true
+    },
+    {
+      "id": "c026c10b-9d40-40a5-b5a3-83f7f68a8d58",
+      "pl": "skąd",
+      "ru": "откуда",
+      "isWord": true
+    },
+    {
+      "id": "b4e03b6a-9842-42cb-b906-904aa8d9d5b1",
+      "pl": "silnik",
+      "ru": "двигатель",
+      "isWord": true
+    },
+    {
+      "id": "772cbc3f-1d9e-4f83-b9ec-0bb708e37595",
+      "pl": "słowo",
+      "ru": "слово",
+      "isWord": true
+    },
+    {
+      "id": "475d7940-e5b1-4b44-904b-d376ae6a95bb",
+      "pl": "sofa",
+      "ru": "диван",
+      "isWord": true
+    },
+    {
+      "id": "9318e248-f9d1-42aa-9bed-91173aca7b3b",
+      "pl": "sól",
+      "ru": "соль",
+      "isWord": true
+    },
+    {
+      "id": "51ecdd9d-bd3a-46aa-adff-e7adf6a11c92",
+      "pl": "spacerować",
+      "ru": "прогуливать",
+      "isWord": true
+    },
+    {
+      "id": "b2a5ca2c-94a1-4c3b-b4b9-251dd54f3867",
+      "pl": "sportowca",
+      "ru": "спортсмен",
+      "isWord": true
+    },
+    {
+      "id": "fb6863d7-19b2-4f0d-9877-a576edcca053",
+      "pl": "stół",
+      "ru": "стол",
+      "isWord": true
+    },
+    {
+      "id": "646399fe-54fe-41a3-89ef-8b9d8bc74c08",
+      "pl": "strażak",
+      "ru": "пожарник",
+      "isWord": true
+    },
+    {
+      "id": "2b6425da-1b01-47c8-b9bb-faa2367a70ae",
+      "pl": "studiować",
+      "ru": "изучать",
+      "isWord": true
+    },
+    {
+      "id": "09a4140d-946e-4e4d-addf-5766e6cd1a88",
+      "pl": "Świerszcz",
+      "ru": "сверчёк",
+      "isWord": true
+    },
+    {
+      "id": "881ddb41-ca1a-432e-9a63-ce657377a82c",
+      "pl": "szczerze mówiąc",
+      "ru": "честно говоря",
+      "isWord": false
+    },
+    {
+      "id": "f31f2781-287b-47b9-9ae5-9d00e14b17dc",
+      "pl": "szczęśliwy",
+      "ru": "счастливый",
+      "isWord": true
+    },
+    {
+      "id": "557e038f-88d8-4015-b317-98a2c6ea410a",
+      "pl": "szczupły",
+      "ru": "худой",
+      "isWord": true
+    },
+    {
+      "id": "fba1475f-c7c6-4358-a2ac-1b3c7e6b7ce8",
+      "pl": "szlachetnie",
+      "ru": "благородно",
+      "isWord": true
+    },
+    {
+      "id": "46d3e247-16df-49d6-9254-22e532c5198f",
+      "pl": "sztuka",
+      "ru": "произведение искусства",
+      "isWord": true
+    },
+    {
+      "id": "b8702dfb-d6aa-446a-a1a2-b0e899c9b218",
+      "pl": "szyja",
+      "ru": "шея",
+      "isWord": true
+    },
+    {
+      "id": "240401e4-63f0-4aee-94f6-3486401426ba",
+      "pl": "szynka",
+      "ru": "ветчина",
+      "isWord": true
+    },
+    {
+      "id": "b23fbd65-b2bb-4f28-ba8d-f8685d3842b0",
+      "pl": "sprzątać",
+      "ru": "убирать",
+      "isWord": true
+    },
+    {
+      "id": "2ccac23d-81fe-42e3-9b77-11d2d207ecde",
+      "pl": "sprzątaczka",
+      "ru": "уборщица",
+      "isWord": true
+    },
+    {
+      "id": "7bc3273c-0fd6-42f0-8e10-a4e7ef69a9c4",
+      "pl": "średniego wzrostu",
+      "ru": "среднего роста",
+      "isWord": false
+    },
+    {
+      "id": "7c22cc3d-56e1-4617-8c7b-2c04b19444fe",
+      "pl": "Świetnie",
+      "ru": "Прекрасно",
+      "isWord": true
+    },
+    {
+      "id": "c5d76011-569f-4fa4-87b4-74121382c12f",
+      "pl": "tablica",
+      "ru": "таблица, доска.",
+      "isWord": true
+    },
+    {
+      "id": "99c520c1-cfb1-407f-ae1d-afed593ddfa4",
+      "pl": "tenis",
+      "ru": "теннис.",
+      "isWord": true
+    },
+    {
+      "id": "927d4287-132e-4c88-96f2-20ac2b31cd7f",
+      "pl": "tramwaj",
+      "ru": "трамвай",
+      "isWord": true
+    },
+    {
+      "id": "d415481f-2176-4e58-9c2c-1a57ff71ea62",
+      "pl": "trąbka",
+      "ru": "труба",
+      "isWord": true
+    },
+    {
+      "id": "c49fc5d6-7bdb-4c3a-8bfb-67428de8edf9",
+      "pl": "twórczy",
+      "ru": "творческий",
+      "isWord": true
+    },
+    {
+      "id": "21f0fb31-d868-47f9-917a-fbe134253432",
+      "pl": "uczciwie",
+      "ru": "честно",
+      "isWord": true
+    },
+    {
+      "id": "dc1ebc68-0a29-4238-85e8-4b8b4387d49e",
+      "pl": "uprawiać",
+      "ru": "заниматься",
+      "isWord": true
+    },
+    {
+      "id": "83caca22-5a65-4f23-973f-2a51379aa8cc",
+      "pl": "Urzędnik",
+      "ru": "Чиновник",
+      "isWord": true
+    },
+    {
+      "id": "fddd6a6e-c258-4033-b60f-99797713d50d",
+      "pl": "usta",
+      "ru": "рот",
+      "isWord": true
+    },
+    {
+      "id": "4bd00c61-e600-4412-b5b4-62f727352f60",
+      "pl": "uwielbiam",
+      "ru": "обожаю",
+      "isWord": true
+    },
+    {
+      "id": "4892e378-dd1e-4760-b141-ce95767b0b9f",
+      "pl": "użeteczny",
+      "ru": "полезный",
+      "isWord": true
+    },
+    {
+      "id": "b7309ff8-09be-4873-862f-630ea699323d",
+      "pl": "wakacje",
+      "ru": "каникулы",
+      "isWord": true
+    },
+    {
+      "id": "04312ea7-dd63-4ea9-8043-a539d1b04417",
+      "pl": "wargi",
+      "ru": "губы",
+      "isWord": true
+    },
+    {
+      "id": "ec7e0850-62ac-4d3d-ac68-e777dc84dd15",
+      "pl": "wszystko w porządku",
+      "ru": "всё в порядке",
+      "isWord": false
+    },
+    {
+      "id": "2f0d32c8-0242-44e7-beef-3a5222db2adc",
+      "pl": "wstrętny",
+      "ru": "отвратительный",
+      "isWord": true
+    },
+    {
+      "id": "7625da37-9253-4f01-afea-b949b4d2b4cf",
+      "pl": "wyspany",
+      "ru": "хорошо отдохнувший/выспавшийся",
+      "isWord": true
+    },
+    {
+      "id": "066f1a33-0902-47c5-a448-59ee6f729137",
+      "pl": "wysportowani",
+      "ru": "спортивные",
+      "isWord": true
+    },
+    {
+      "id": "d8260e1c-2c6e-4f06-9322-592ca0ebdc72",
+      "pl": "wystrawne",
+      "ru": "сухое",
+      "isWord": true
+    },
+    {
+      "id": "eeca94e9-fa2f-4326-82ae-6554b25de902",
+      "pl": "zachwycie",
+      "ru": "восторг",
+      "isWord": true
+    },
+    {
+      "id": "651b30de-2189-4e1a-96c6-c9a805c4b639",
+      "pl": "zaimka",
+      "ru": "местоимение",
+      "isWord": true
+    },
+    {
+      "id": "37f27558-2516-450b-b994-49ab9146fab2",
+      "pl": "zamierzać",
+      "ru": "собираться, намеревать",
+      "isWord": true
+    },
+    {
+      "id": "8e417440-4d9c-452e-a3d7-5683a30a1529",
+      "pl": "zanim",
+      "ru": "прежде чем",
+      "isWord": true
+    },
+    {
+      "id": "ff8e5281-c1ab-4a12-895a-c23c7992036c",
+      "pl": "zaskoczony",
+      "ru": "озадачен/ удивлённый",
+      "isWord": true
+    },
+    {
+      "id": "8c6ab7cd-fad5-40f2-b50b-015383e5d951",
+      "pl": "zasada",
+      "ru": "принцип, правило.",
+      "isWord": true
+    },
+    {
+      "id": "44aa4b63-0032-42f2-88db-0ec83995af24",
+      "pl": "zazdrosny",
+      "ru": "завистливый.",
+      "isWord": true
+    },
+    {
+      "id": "5aba5964-b1fa-4664-b0b5-bbc124a9b7ca",
+      "pl": "zbędnych",
+      "ru": "ненужный, лишний.",
+      "isWord": true
+    },
+    {
+      "id": "643a28fb-0d55-4e11-a639-95939d46825e",
+      "pl": "zburzone",
+      "ru": "снесено, резко сменилось",
+      "isWord": true
+    },
+    {
+      "id": "38e6b1de-3d3b-4deb-bc9f-dab930187b6b",
+      "pl": "zdążył",
+      "ru": "успел",
+      "isWord": true
+    },
+    {
+      "id": "a3c9587c-5858-4914-9862-7afd71e44ad3",
+      "pl": "zdjęcie",
+      "ru": "фотография",
+      "isWord": true
+    },
+    {
+      "id": "329d4a89-dc02-4bb3-8744-7bf90f5694dc",
+      "pl": "zeszyt",
+      "ru": "тетрадь",
+      "isWord": true
+    },
+    {
+      "id": "de844cf0-2f6f-42a3-bf38-04b93435de16",
+      "pl": "zirytowany",
+      "ru": "раздраженный",
+      "isWord": true
+    },
+    {
+      "id": "1fb5b177-a10c-4f70-be7f-3dbca60a4a57",
+      "pl": "zmartwienie",
+      "ru": "беспокойство, волнение.",
+      "isWord": true
+    },
+    {
+      "id": "4895a82f-390f-489f-9443-47c304c5cf03",
+      "pl": "zmęczony",
+      "ru": "усталый",
+      "isWord": true
+    },
+    {
+      "id": "e048ac89-7532-41c3-9615-f98251f7b8b0",
+      "pl": "zszokowany",
+      "ru": "шокированный",
+      "isWord": true
     }
   ]
 }
