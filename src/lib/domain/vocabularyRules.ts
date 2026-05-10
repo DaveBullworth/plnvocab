@@ -13,6 +13,28 @@ export function isFilledEntry(entry: Entry): boolean {
   return entry.pl.trim().length > 0 && entry.ru.trim().length > 0;
 }
 
+export interface DuplicatePolishGroup {
+  normalized: string;
+  values: string[];
+}
+
+export function findDuplicatePolish(entries: Entry[]): DuplicatePolishGroup[] {
+  const groups = new Map<string, string[]>();
+  for (const entry of entries) {
+    const trimmed = entry.pl.trim();
+    if (trimmed.length === 0) continue;
+    const normalized = trimmed.toLowerCase();
+    const list = groups.get(normalized);
+    if (list) list.push(trimmed);
+    else groups.set(normalized, [trimmed]);
+  }
+  const duplicates: DuplicatePolishGroup[] = [];
+  for (const [normalized, values] of groups) {
+    if (values.length > 1) duplicates.push({ normalized, values });
+  }
+  return duplicates;
+}
+
 export function serializeVocabularyFile(file: VocabularyFile): string {
   return JSON.stringify(file, null, 2);
 }

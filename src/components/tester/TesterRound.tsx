@@ -2,10 +2,10 @@
 
 import { Eye, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { PolishLettersPopover, usePolishLetters } from "@/components/common/PolishLetters";
 import type { Entry } from "@/lib/domain/Entry";
 import { TesterResult } from "./TesterResult";
 
-const PL_LETTERS = ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"] as const;
 const MAX_INPUT = 200;
 
 function formatTime(seconds: number): string {
@@ -31,13 +31,18 @@ export function TesterRound({
 }) {
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState("");
-  const [focused, setFocused] = useState(false);
   const [errored, setErrored] = useState(false);
   const [revealOpen, setRevealOpen] = useState(false);
   const [correctFirstTry, setCorrectFirstTry] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [done, setDone] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const helper = usePolishLetters({
+    inputRef,
+    value: input,
+    onChange: setInput,
+    maxLength: MAX_INPUT,
+  });
 
   useEffect(() => {
     if (done) return;
@@ -68,21 +73,6 @@ export function TesterRound({
     } else {
       setErrored(true);
     }
-  };
-
-  const insertChar = (ch: string) => {
-    const el = inputRef.current;
-    if (!el) return;
-    const start = el.selectionStart ?? el.value.length;
-    const end = el.selectionEnd ?? el.value.length;
-    const next = el.value.slice(0, start) + ch + el.value.slice(end);
-    if (next.length > MAX_INPUT) return;
-    setInput(next);
-    requestAnimationFrame(() => {
-      el.focus();
-      const caret = start + ch.length;
-      el.setSelectionRange(caret, caret);
-    });
   };
 
   if (done) {
@@ -154,29 +144,16 @@ export function TesterRound({
               placeholder="po polsku"
               autoFocus
               onChange={(e) => setInput(e.target.value)}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
+              onFocus={helper.onFocus}
+              onBlur={helper.onBlur}
               className={`w-full rounded border px-3 py-2 text-center outline-none focus:ring-1 ${
                 errored
                   ? "border-red-500 focus:ring-red-400"
                   : "focus:ring-blue-400"
               }`}
             />
-            {focused && (
-              <div className="absolute left-1/2 top-full z-10 mt-1 flex -translate-x-1/2 gap-1 rounded border bg-[var(--background)] p-1 shadow">
-                {PL_LETTERS.map((ch) => (
-                  <button
-                    key={ch}
-                    type="button"
-                    tabIndex={-1}
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => insertChar(ch)}
-                    className="rounded px-1.5 py-0.5 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-                  >
-                    {ch}
-                  </button>
-                ))}
-              </div>
+            {helper.isOpen && (
+              <PolishLettersPopover align="center" onPick={helper.insertChar} />
             )}
           </div>
 
