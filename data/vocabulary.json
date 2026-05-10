@@ -1,7 +1,343 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T13:39:06.427Z",
+  "updatedAt": "2026-05-10T14:16:06.918Z",
   "entries": [
+    {
+      "id": "133b735c-195c-44e5-8d59-b6bf52bfbaa3",
+      "pl": "małżeństwo",
+      "ru": "муж и жена",
+      "isWord": true
+    },
+    {
+      "id": "97252f4e-785f-49de-a9ca-a8d256a29f7b",
+      "pl": "rodzeństwo",
+      "ru": "брат и сестра",
+      "isWord": true
+    },
+    {
+      "id": "99b3ef2e-0af4-4848-87c8-1eed2fdc4478",
+      "pl": "panna",
+      "ru": "незамужняя",
+      "isWord": true
+    },
+    {
+      "id": "c3cfdc84-0ed0-4499-a75e-870a5fd60e0b",
+      "pl": "kawaler",
+      "ru": "холост",
+      "isWord": true
+    },
+    {
+      "id": "0ac68fe8-9b64-4ec1-bdab-4d896f6f0784",
+      "pl": "torebka",
+      "ru": "сумка",
+      "isWord": true
+    },
+    {
+      "id": "1edf2591-22fe-49a2-b0ce-3f0944b889b5",
+      "pl": "łańcuch",
+      "ru": "цепочка",
+      "isWord": true
+    },
+    {
+      "id": "a3b85e01-0547-4670-a05e-5e4cc471f851",
+      "pl": "zegarek",
+      "ru": "часы",
+      "isWord": true
+    },
+    {
+      "id": "d87a4b6e-2496-4996-bf8e-784d370a3469",
+      "pl": "obrączka",
+      "ru": "обручальное кольцо",
+      "isWord": true
+    },
+    {
+      "id": "141e6a0e-8203-4e42-844c-051e48c2d4f2",
+      "pl": "bransoletka",
+      "ru": "браслет",
+      "isWord": true
+    },
+    {
+      "id": "ed1b80b9-d55e-4ec3-b3f5-c17ab28ea7c3",
+      "pl": "pierścionek",
+      "ru": "перстень",
+      "isWord": true
+    },
+    {
+      "id": "a0da1b38-68c0-4948-b1fc-45e6212da57a",
+      "pl": "kolczyki",
+      "ru": "серёжки",
+      "isWord": true
+    },
+    {
+      "id": "81ecb740-b08c-48a9-b692-037e15a71b2f",
+      "pl": "okulary",
+      "ru": "очки",
+      "isWord": true
+    },
+    {
+      "id": "1276afc5-2412-4a4b-a743-d99ad1bf4c6c",
+      "pl": "pasek",
+      "ru": "ремень",
+      "isWord": true
+    },
+    {
+      "id": "4894e42d-174f-409a-a759-269f269aaa8b",
+      "pl": "dekoracje",
+      "ru": "аксессуары",
+      "isWord": true
+    },
+    {
+      "id": "98dab2a3-b583-45ed-a541-c7499c42a2fd",
+      "pl": "kurtka",
+      "ru": "куртка",
+      "isWord": true
+    },
+    {
+      "id": "60a2d3e9-3869-4540-ba11-49219ea05dd1",
+      "pl": "sweter",
+      "ru": "свитер",
+      "isWord": true
+    },
+    {
+      "id": "9a817f41-dfb8-4a79-9f55-dc96d830561e",
+      "pl": "koszulka",
+      "ru": "майка",
+      "isWord": true
+    },
+    {
+      "id": "18172ded-ff1f-4db2-bfea-eb03d30170a6",
+      "pl": "spodnie",
+      "ru": "штаны",
+      "isWord": true
+    },
+    {
+      "id": "394be7c2-eb1d-475d-80f0-4bb3cd1fe7ad",
+      "pl": "boksery",
+      "ru": "муж. трусы",
+      "isWord": true
+    },
+    {
+      "id": "bb7a0120-c1ec-4210-b02b-7dd3154a2e72",
+      "pl": "szorty",
+      "ru": "шорты",
+      "isWord": true
+    },
+    {
+      "id": "098f53ba-e37f-45a5-9cdf-3863bf2b931a",
+      "pl": "buty na wysokim obcasie",
+      "ru": "обувь на высоком каблуке",
+      "isWord": false
+    },
+    {
+      "id": "0900c4d1-eba1-4b9b-b1cf-c1bc0cfb4811",
+      "pl": "pantofle",
+      "ru": "туфли",
+      "isWord": true
+    },
+    {
+      "id": "f3d73bda-90f4-4010-b268-11e2c5918688",
+      "pl": "kapcie",
+      "ru": "тапочки",
+      "isWord": true
+    },
+    {
+      "id": "4dfcabe3-18a9-4a35-acf0-936a9283aeab",
+      "pl": "garnitur",
+      "ru": "костюм (м)",
+      "isWord": true
+    },
+    {
+      "id": "8207d159-e104-4769-8235-ffa3ca69331a",
+      "pl": "płaszcz",
+      "ru": "плащ",
+      "isWord": true
+    },
+    {
+      "id": "f57dfc24-c65d-4d0f-87a7-bd8b29b6bef4",
+      "pl": "szalik",
+      "ru": "шарф",
+      "isWord": true
+    },
+    {
+      "id": "82e5dba9-b884-4390-b702-4c7d244940fb",
+      "pl": "czapka",
+      "ru": "шапка",
+      "isWord": true
+    },
+    {
+      "id": "cbcf2320-fa96-475a-a76b-c6458826c367",
+      "pl": "skarpetki",
+      "ru": "носки",
+      "isWord": true
+    },
+    {
+      "id": "faeaef03-eeb7-4491-b451-604d8cda67d3",
+      "pl": "baletki",
+      "ru": "балетки",
+      "isWord": true
+    },
+    {
+      "id": "20b38af3-914b-4e56-a530-28e0a76fae57",
+      "pl": "klapki",
+      "ru": "шлёпанцы",
+      "isWord": true
+    },
+    {
+      "id": "253f0503-0a5e-42a7-92c1-2f0a4c93075f",
+      "pl": "sandały",
+      "ru": "сандали",
+      "isWord": true
+    },
+    {
+      "id": "2298fef9-247a-4360-877e-6feee4213d85",
+      "pl": "półbuty",
+      "ru": "полуботинки",
+      "isWord": true
+    },
+    {
+      "id": "5e53b402-7828-4d12-905c-daca5dcae8c6",
+      "pl": "kozaki",
+      "ru": "сапоги",
+      "isWord": true
+    },
+    {
+      "id": "e916be0f-f860-4eac-92d5-0225cc5e02a7",
+      "pl": "trampki",
+      "ru": "кеды",
+      "isWord": true
+    },
+    {
+      "id": "c58ce890-7abf-4708-a739-d6c38fe81a0d",
+      "pl": "buty",
+      "ru": "ботинки",
+      "isWord": true
+    },
+    {
+      "id": "d01a4e59-c769-4d6d-b014-dc756ad4eca6",
+      "pl": "obuwie",
+      "ru": "обувь",
+      "isWord": true
+    },
+    {
+      "id": "7468aad3-2119-4dc8-aafd-674b2fc40807",
+      "pl": "dżinsy",
+      "ru": "джинсы",
+      "isWord": true
+    },
+    {
+      "id": "2e4f4e9a-58e5-4c0c-a988-399b428fff32",
+      "pl": "strój kąpielowy",
+      "ru": "купальник",
+      "isWord": true
+    },
+    {
+      "id": "aaa75daf-3132-40c8-b308-099fa3b7486e",
+      "pl": "kapelusz",
+      "ru": "шляпа",
+      "isWord": true
+    },
+    {
+      "id": "51395bf0-7e74-45e9-b78a-7cdd3dae1514",
+      "pl": "rajstopy",
+      "ru": "колготки",
+      "isWord": true
+    },
+    {
+      "id": "5c4db4c0-2636-4b79-8a9b-116ce0e0c41d",
+      "pl": "szlafrok",
+      "ru": "халат",
+      "isWord": true
+    },
+    {
+      "id": "2758167e-7193-4c55-b10d-834bc318806b",
+      "pl": "pończochy",
+      "ru": "чулки",
+      "isWord": true
+    },
+    {
+      "id": "0b49731c-4f52-4679-a96a-f91db17bf72d",
+      "pl": "biustonosz",
+      "ru": "бюстгалтер",
+      "isWord": true
+    },
+    {
+      "id": "502471cc-1c4d-4d19-873d-d47737e5b73b",
+      "pl": "majtki",
+      "ru": "трусы",
+      "isWord": true
+    },
+    {
+      "id": "f2b0b71c-4ff7-4f74-87c6-68dbf89d8434",
+      "pl": "bielizna",
+      "ru": "нижнее бельё",
+      "isWord": true
+    },
+    {
+      "id": "338cb53a-e877-46a6-a7d6-5fcea7137ffe",
+      "pl": "koszula",
+      "ru": "рубашка",
+      "isWord": true
+    },
+    {
+      "id": "7781ff52-253f-42f4-a557-c789859bde3e",
+      "pl": "żakiet",
+      "ru": "жакет / пиджак",
+      "isWord": true
+    },
+    {
+      "id": "d059c8a5-40e7-4bd2-8b84-4772e6e08c36",
+      "pl": "sukienka",
+      "ru": "платье",
+      "isWord": true
+    },
+    {
+      "id": "42345828-a5b0-4873-9606-ca414c55ec15",
+      "pl": "kostium",
+      "ru": "костюм (ж)",
+      "isWord": true
+    },
+    {
+      "id": "68cf58ea-90e8-4aa3-8582-99fccecfcd65",
+      "pl": "spódnica",
+      "ru": "юбка",
+      "isWord": true
+    },
+    {
+      "id": "bb908061-c0b8-4d07-a19c-ffd1a259686f",
+      "pl": "bluzka",
+      "ru": "блузка",
+      "isWord": true
+    },
+    {
+      "id": "6b68cc20-be08-4ac0-bd67-34aa3e9e5959",
+      "pl": "moda",
+      "ru": "мода",
+      "isWord": true
+    },
+    {
+      "id": "c7a84772-a731-431e-a2b7-c556f69c0410",
+      "pl": "doradca",
+      "ru": "помощник/советник",
+      "isWord": true
+    },
+    {
+      "id": "65b4021c-eacb-4c60-bf50-cd16415061be",
+      "pl": "ekspedient",
+      "ru": "продавец",
+      "isWord": true
+    },
+    {
+      "id": "83d0031d-18e8-418c-94ff-3e87df819fee",
+      "pl": "wyprzedaż",
+      "ru": "распродажа",
+      "isWord": true
+    },
+    {
+      "id": "334c8642-d0d0-40f6-ad21-840fcd4cd55f",
+      "pl": "przymierzalnia",
+      "ru": "примерочная",
+      "isWord": true
+    },
     {
       "id": "9227c84c-1492-4b59-b283-7573b8064ed0",
       "pl": "zwierciadło",
