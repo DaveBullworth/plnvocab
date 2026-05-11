@@ -103,15 +103,19 @@ export function VocabularyTable({
 
 			{filteredCount > 0 && <VocabularyPagination table={table} />}
 
-			<table className="w-full border-collapse text-sm">
+			<table className="w-full table-fixed border-collapse text-sm">
 				<thead>
 					{table.getHeaderGroups().map(hg => (
 						<tr key={hg.id} className="border-b text-left">
 							{hg.headers.map(h => {
 								const canSort = h.column.getCanSort();
 								const sorted = h.column.getIsSorted();
+								const isActions = h.column.id === "actions";
 								return (
-									<th key={h.id} className="px-2 py-2 font-medium">
+									<th
+										key={h.id}
+										className={`px-2 py-2 font-medium ${isActions ? "w-10" : ""}`}
+									>
 										{h.isPlaceholder ? null : (
 											<button
 												type="button"

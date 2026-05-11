@@ -1,4 +1,5 @@
 import "server-only";
+import { unstable_cache } from "next/cache";
 import type { Entry } from "@/lib/domain/Entry";
 import {
 	CURRENT_VOCABULARY_VERSION,
@@ -46,25 +47,28 @@ function authHeaders(token: string, extra?: Record<string, string>): HeadersInit
 	};
 }
 
-export async function loadVocabulary(): Promise<VocabularyFile> {
-	const c = getConfig();
-	const token = getToken();
+export const loadVocabulary = unstable_cache(
+	async (): Promise<VocabularyFile> => {
+		const c = getConfig();
+		const token = getToken();
 
-	const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
-		headers: authHeaders(token, { Accept: "application/vnd.github.raw" }),
-		cache: "force-cache",
-		next: { tags: ["vocabulary"] }
-	});
+		const res = await fetch(`${contentsUrl(c)}?ref=${c.branch}`, {
+			headers: authHeaders(token, { Accept: "application/vnd.github.raw" }),
+			cache: "no-store"
+		});
 
-	if (res.status === 404) {
-		return EMPTY_VOCABULARY;
-	}
-	if (!res.ok) {
-		throw new Error(`Failed to fetch vocabulary: ${res.status} ${res.statusText}`);
-	}
-	const json = await res.json();
-	return parseVocabularyFile(json);
-}
+		if (res.status === 404) {
+			return EMPTY_VOCABULARY;
+		}
+		if (!res.ok) {
+			throw new Error(`Failed to fetch vocabulary: ${res.status} ${res.statusText}`);
+		}
+		const json = await res.json();
+		return parseVocabularyFile(json);
+	},
+	["vocabulary"],
+	{ tags: ["vocabulary"], revalidate: 3600 }
+);
 
 export async function saveVocabulary(entries: Entry[]): Promise<VocabularyFile> {
 	const c = getConfig();
