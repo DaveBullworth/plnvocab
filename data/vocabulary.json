@@ -1,7 +1,391 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-10T14:16:06.918Z",
+  "updatedAt": "2026-05-12T08:11:41.212Z",
   "entries": [
+    {
+      "id": "c711c743-dbb6-4f5f-8a40-a783bc9877b4",
+      "pl": "kieliszek",
+      "ru": "бокал",
+      "isWord": true
+    },
+    {
+      "id": "0073ae16-e85c-4ccb-8324-cb611a43acce",
+      "pl": "waza",
+      "ru": "ваза",
+      "isWord": true
+    },
+    {
+      "id": "d1dc96b6-18a8-4cc5-b270-b04e8c3d752f",
+      "pl": "kubek",
+      "ru": "стакан",
+      "isWord": true
+    },
+    {
+      "id": "015a9fd0-f9c1-4bd0-a9f3-6c43e7310b7b",
+      "pl": "miska",
+      "ru": "миска",
+      "isWord": true
+    },
+    {
+      "id": "45ce9874-530c-4b17-9b47-aa548db085a1",
+      "pl": "talerz głęboki",
+      "ru": "миска (2 слова)",
+      "isWord": true
+    },
+    {
+      "id": "543c3ad6-ec89-4af3-8a25-60250c11cdff",
+      "pl": "talerz",
+      "ru": "тарелка",
+      "isWord": true
+    },
+    {
+      "id": "65b93d22-e0a4-4f3b-8f3b-a3b03c4088f3",
+      "pl": "spodek",
+      "ru": "блюдечко",
+      "isWord": true
+    },
+    {
+      "id": "a700ead8-7d49-46b9-9d05-848b7e3e48e9",
+      "pl": "szklanka",
+      "ru": "стакан",
+      "isWord": true
+    },
+    {
+      "id": "ac3a8f7a-b2fb-40b8-81de-1a4340c8ddc7",
+      "pl": "filiżanka",
+      "ru": "чашка",
+      "isWord": true
+    },
+    {
+      "id": "1ccfa203-92e7-4a6b-b71f-75bd18e010de",
+      "pl": "dzbanek",
+      "ru": "кувшин",
+      "isWord": true
+    },
+    {
+      "id": "3ab143f5-0834-4249-8472-44dd51a22ac9",
+      "pl": "kuchenka",
+      "ru": "плита (готовить)",
+      "isWord": true
+    },
+    {
+      "id": "5b08d3ce-d1c1-4c09-903c-084ad706bbef",
+      "pl": "patelnia",
+      "ru": "сковородка",
+      "isWord": true
+    },
+    {
+      "id": "cb399396-7fd8-4fd3-a464-242aa58ed81c",
+      "pl": "rondel",
+      "ru": "кастрюля",
+      "isWord": true
+    },
+    {
+      "id": "ad159226-0558-4fe3-b58b-0e47dde67337",
+      "pl": "widelec",
+      "ru": "вилка",
+      "isWord": true
+    },
+    {
+      "id": "4563901d-5f2f-4c23-a4db-f8228ec5af9a",
+      "pl": "gotować",
+      "ru": "готовить ",
+      "isWord": true
+    },
+    {
+      "id": "0e91ebc7-01df-4dbf-9bb1-bb2a0692ea7c",
+      "pl": "smażyć ",
+      "ru": "жарить ",
+      "isWord": true
+    },
+    {
+      "id": "7702425d-12df-461a-9129-b05ac5e4f4a8",
+      "pl": "kroić",
+      "ru": "резать ",
+      "isWord": true
+    },
+    {
+      "id": "14e55300-b010-4fed-b353-eeff438e4375",
+      "pl": "przyprawiać ",
+      "ru": "приправлять ",
+      "isWord": true
+    },
+    {
+      "id": "f094bc67-8c9e-4495-8c52-e78ccd8902bb",
+      "pl": "dodawać ",
+      "ru": "добавлять ",
+      "isWord": true
+    },
+    {
+      "id": "0b8beea3-68ed-4bba-a95f-076b8247e96b",
+      "pl": "mieszać ",
+      "ru": "мешать ",
+      "isWord": true
+    },
+    {
+      "id": "4657577e-9f41-4daa-88a6-0dcdd0e0dcdb",
+      "pl": "parzyć",
+      "ru": "парить ",
+      "isWord": true
+    },
+    {
+      "id": "81eb9c5c-5ed7-4c98-9082-97e4d62d797d",
+      "pl": "warzyć ",
+      "ru": "варить ",
+      "isWord": true
+    },
+    {
+      "id": "814ef0f3-a4b7-4ed7-98a1-41ed6fba892f",
+      "pl": "dusić ",
+      "ru": "тушить",
+      "isWord": true
+    },
+    {
+      "id": "c196da6c-2905-40fc-ba42-813840556b75",
+      "pl": "planeta",
+      "ru": "планета",
+      "isWord": true
+    },
+    {
+      "id": "e2a2acc2-895f-4163-bf39-24da7e73eaf9",
+      "pl": "gwiazda",
+      "ru": "звезда",
+      "isWord": true
+    },
+    {
+      "id": "b31d07b1-f01f-46a3-87e2-ff33471d87ed",
+      "pl": "chmura",
+      "ru": "туча",
+      "isWord": true
+    },
+    {
+      "id": "15657227-e885-4666-9db0-eca37bea6969",
+      "pl": "księżyc",
+      "ru": "месяц / луна",
+      "isWord": true
+    },
+    {
+      "id": "b9a56f56-7ff4-4bd8-be94-3b2265bba539",
+      "pl": "pochmurny",
+      "ru": "пасмурный",
+      "isWord": true
+    },
+    {
+      "id": "9c6cbd37-abf7-4b7e-93d4-032319846722",
+      "pl": "gołoledź",
+      "ru": "гололёд",
+      "isWord": true
+    },
+    {
+      "id": "aa3f8b7a-8032-4280-aa43-7091ec9729da",
+      "pl": "śnieżyca",
+      "ru": "метель",
+      "isWord": true
+    },
+    {
+      "id": "a6019608-9a65-4927-aedf-f60b3d9a83da",
+      "pl": "błyskawica",
+      "ru": "молния",
+      "isWord": true
+    },
+    {
+      "id": "b8660fba-60ac-48c5-bad2-21d34fd08a54",
+      "pl": "grzmot",
+      "ru": "гром",
+      "isWord": true
+    },
+    {
+      "id": "6b44c60b-5ffe-4eb8-b281-3dbe5b59d8d3",
+      "pl": "tęcza",
+      "ru": "радуга",
+      "isWord": true
+    },
+    {
+      "id": "07d0fdcc-ba3d-4697-be00-2c9d2ba5c191",
+      "pl": "mgła",
+      "ru": "мгла",
+      "isWord": true
+    },
+    {
+      "id": "0d0d6492-a715-4902-86a9-7fefc9c30e08",
+      "pl": "zachmurzenie",
+      "ru": "облачность",
+      "isWord": true
+    },
+    {
+      "id": "41f251ca-7c61-4c37-bd14-0106dbf09fac",
+      "pl": "stopień",
+      "ru": "градус",
+      "isWord": true
+    },
+    {
+      "id": "881919df-35b1-42a9-bc54-cfd730cf90a1",
+      "pl": "opalenizna",
+      "ru": "загар",
+      "isWord": true
+    },
+    {
+      "id": "dbe1a9a6-a82d-4b7a-b2bf-43b81dc09263",
+      "pl": "słoneczna",
+      "ru": "солнечная",
+      "isWord": true
+    },
+    {
+      "id": "29d48781-f5c5-4491-b36b-617cef3a83ad",
+      "pl": "deszcz",
+      "ru": "дождь",
+      "isWord": true
+    },
+    {
+      "id": "d0b219a2-a79b-477c-901c-a31aff475132",
+      "pl": "zimno",
+      "ru": "холодно",
+      "isWord": true
+    },
+    {
+      "id": "761fd172-e413-423d-9958-945656436436",
+      "pl": "ciepło",
+      "ru": "тепло",
+      "isWord": true
+    },
+    {
+      "id": "6b6c1c6c-e241-42bd-ad38-c92f2831a3d0",
+      "pl": "mróz",
+      "ru": "мороз",
+      "isWord": true
+    },
+    {
+      "id": "775999eb-4993-45d5-84eb-4d95e0b23cd5",
+      "pl": "śnieg",
+      "ru": "снег",
+      "isWord": true
+    },
+    {
+      "id": "31051f1e-c573-4feb-af51-e786f34eeca8",
+      "pl": "wiatr",
+      "ru": "ветер",
+      "isWord": true
+    },
+    {
+      "id": "f81fbcb8-30bf-42ce-b6c8-a47c2908603d",
+      "pl": "wiać",
+      "ru": "дуть",
+      "isWord": true
+    },
+    {
+      "id": "c9028233-41cc-4774-b620-673fba661129",
+      "pl": "powietrze",
+      "ru": "воздух",
+      "isWord": true
+    },
+    {
+      "id": "4d29d431-a3d3-440d-9d79-128f08df57ee",
+      "pl": "burza",
+      "ru": "буря",
+      "isWord": true
+    },
+    {
+      "id": "e7dc300d-0f12-43db-b7f5-8eebfa5b0196",
+      "pl": "upalna",
+      "ru": "жаркая / знойная",
+      "isWord": true
+    },
+    {
+      "id": "bae4137d-b276-4b9c-a005-a8b95b995859",
+      "pl": "jesień",
+      "ru": "осень",
+      "isWord": true
+    },
+    {
+      "id": "aa3ab790-bbc7-4863-8327-0e0682abc4a6",
+      "pl": "lato",
+      "ru": "лето",
+      "isWord": true
+    },
+    {
+      "id": "45609b36-86c0-43a8-beb8-a71c5c559a7c",
+      "pl": "październik",
+      "ru": "октябрь",
+      "isWord": true
+    },
+    {
+      "id": "24bc5734-f367-4c39-9c16-a6a0a5ce5994",
+      "pl": "listopad",
+      "ru": "ноябрь",
+      "isWord": true
+    },
+    {
+      "id": "7a0439e8-2079-4846-abcf-4173c3575179",
+      "pl": "grudzień",
+      "ru": "декабрь",
+      "isWord": true
+    },
+    {
+      "id": "63d3bef6-511e-48c3-99bc-6555c3d189e5",
+      "pl": "wiosna",
+      "ru": "весна",
+      "isWord": true
+    },
+    {
+      "id": "24208e3a-8b05-44d3-8165-a0ef5367c01d",
+      "pl": "lipiec",
+      "ru": "июль",
+      "isWord": true
+    },
+    {
+      "id": "6a5fabf8-653a-442c-a691-5df584bcd478",
+      "pl": "sierpień",
+      "ru": "август",
+      "isWord": true
+    },
+    {
+      "id": "f92b3158-878c-462c-a407-57666add9c89",
+      "pl": "wrzesień",
+      "ru": "сентябрь",
+      "isWord": true
+    },
+    {
+      "id": "b74116a4-02d1-47a0-a464-cbf1a58a54ae",
+      "pl": "styczeń",
+      "ru": "январь",
+      "isWord": true
+    },
+    {
+      "id": "af13216a-e36e-44a2-9552-5f00a706b6b7",
+      "pl": "luty",
+      "ru": "февраль",
+      "isWord": true
+    },
+    {
+      "id": "156db582-981b-4d01-9efe-f28d056f6f5e",
+      "pl": "marzecń",
+      "ru": "март",
+      "isWord": true
+    },
+    {
+      "id": "402a1671-5c92-4887-9f68-7fd647ca357c",
+      "pl": "kwiecień",
+      "ru": "апрель",
+      "isWord": true
+    },
+    {
+      "id": "16cad3a2-4a2d-4d24-8ded-e36cf22dbd6a",
+      "pl": "maj",
+      "ru": "май",
+      "isWord": true
+    },
+    {
+      "id": "1f0f016f-4644-41f0-886d-813784752889",
+      "pl": "czerwiec",
+      "ru": "июнь",
+      "isWord": true
+    },
+    {
+      "id": "005ad07c-1685-451d-8585-4d13dd642bdc",
+      "pl": "decyzja",
+      "ru": "решение",
+      "isWord": true
+    },
     {
       "id": "133b735c-195c-44e5-8d59-b6bf52bfbaa3",
       "pl": "małżeństwo",
