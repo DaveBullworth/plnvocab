@@ -1,37 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AdminProvider } from "@/components/auth/AdminProvider";
-import { Nav } from "@/components/layout/Nav";
-import { getAdminFromCookies } from "@/lib/auth/session";
-import { getThemeFromCookies } from "@/lib/theme/themeCookie";
 
 export const metadata: Metadata = {
   title: "Polish Vocabulary Trainer",
   description: "A small educational project to help learn the Polish language",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isAdmin, theme] = await Promise.all([
-    getAdminFromCookies(),
-    getThemeFromCookies(),
-  ]);
-  const isDark = theme === "dark";
-
   return (
-    <html
-      lang="en"
-      className={`h-full antialiased${isDark ? " dark" : ""}`}
-    >
-      <body className="min-h-full flex flex-col">
-        <AdminProvider isAdmin={isAdmin}>
-          <Nav isDark={isDark} />
-          {children}
-        </AdminProvider>
-      </body>
+    <html lang="en" className="h-full antialiased">
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
